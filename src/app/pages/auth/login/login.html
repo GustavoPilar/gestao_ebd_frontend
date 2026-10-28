@@ -1,0 +1,92 @@
+<div class="flex flex-column h-screen justify-content-center align-items-center">
+
+    <!-- Left Content -->
+    <div class="flex flex-row flex-1">
+        <div class="flex flex-column flex-1 justify-content-center align-items-center p-2">
+        
+            <div class="p-3 border-round-xl max-w-30rem w-full">
+                <form novalidate (submit)="onSubmit($event)">
+                    <div class="grid">
+                        <div class="field col-12 flex flex-row gap-2">
+                            <div class="flex flex-column p-2 justify-content-center align-items-center">
+                                <div class="p-2 bg-primary border-round-lg flex flex-column justify-content-center align-items-center">
+                                    <svg data-p-icon="book" size="30"></svg>
+                                </div>
+                            </div>
+                            <div class="flex flex-column flex-1 p-2 justify-content-center align-items-start gap-1">
+                                <h2>Gestão E.B.D</h2>
+                                <small class="text-gray-500">Secretaria da Escola Bíblia Dominical</small>
+                            </div>
+                            <div class="flex flex-column p-2 justify-content-center align-items-center">
+                                <div class="p-2 flex flex-column justify-content-center align-items-center">
+                                    <svg data-p-icon="verified" size="50" color="var(--p-primary-500)"></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field col-12 flex flex-column gap-2">
+                            <p-float-label variant="on">
+                                <p-icon-field>
+                                    <p-inputicon>
+                                        <svg data-p-icon="envelope"></svg>
+                                    </p-inputicon>
+                                    <input type="email" id="email" placeholder="Digite seu e-mail" pInputText fluid [formField]="loginForm.email"/>
+                                </p-icon-field>
+                                <label for="email">E-mail</label>
+                            </p-float-label>
+                            @if (loginForm.email().invalid()) {
+                                <app-error-message-form [errors]="loginForm.email().errors()"></app-error-message-form>
+                            }
+                        </div>
+                        <div class="field col-12 flex flex-column gap-2">
+                            <p-float-label variant="on">
+                                <p-icon-field>
+                                    <p-inputicon>
+                                        <svg data-p-icon="lock"></svg>
+                                    </p-inputicon>
+                                    <input type="password" id="password" placeholder="Digite sua senha" pInputPassword fluid [(mask)]="mask" [formField]="loginForm.password"/>
+                                    <p-inputicon (click)="toggleMask()">
+                                        @if (mask()) {
+                                            <svg data-p-icon="eye-slash"></svg>
+                                        }
+                                        @else {
+                                            <svg data-p-icon="eye"></svg>
+                                        }
+                                    </p-inputicon>
+                                </p-icon-field>
+                                <label for="password">Senha</label>
+                            </p-float-label>
+                            <div class="flex flex-row justify-content-between align-items-center">
+                                <span>
+                                    @if (loginForm.password().invalid()) {
+                                        <app-error-message-form [errors]="loginForm.password().errors()"></app-error-message-form>
+                                    }
+                                </span>
+                                <a href="#" class="text-primary no-underline">Esqueci a senha</a>
+                            </div>
+                        </div>
+                        <div class="field col-12 flex flex-column gap-4">
+                            <button
+                                type="submit"
+                                pButton
+                                fluid
+                                [disabled]="loginForm().invalid() || loginForm().submitting()"
+                                [severity]="loginForm().invalid() ? 'danger' : undefined">
+                                @if (loginForm().invalid()) {
+                                    Formulário inválido <svg data-p-icon="times"></svg>
+                                }
+                                @else if (loginForm().submitting()) {
+                                    Verificando <svg data-p-icon="spinner" [spin]="true"></svg>
+                                }
+                                @else {
+                                    Entrar <svg data-p-icon="sign-in"></svg>
+                                }
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Left Content -->
+
+</div>
