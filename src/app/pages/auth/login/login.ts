@@ -6,7 +6,6 @@ import { ButtonModule } from 'primeng/button';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
-import { Book } from '@primeicons/angular/book';
 import { Envelope } from '@primeicons/angular/envelope';
 import { Lock } from '@primeicons/angular/lock';
 import { Eye } from '@primeicons/angular/eye';
@@ -29,7 +28,6 @@ import { HeaderTitle } from '../../../components/header-title/header-title';
     FloatLabelModule,
     IconFieldModule,
     InputIconModule,
-    Book,
     Envelope,
     Lock,
     Eye,

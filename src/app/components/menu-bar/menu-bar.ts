@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { User } from '@primeicons/angular/user';
+import { Cog } from '@primeicons/angular/cog';
 import { HeaderTitle } from '../header-title/header-title';
 
 @Component({
   imports: [
-    User,
+    Cog,
     ButtonModule,
     HeaderTitle
   ],

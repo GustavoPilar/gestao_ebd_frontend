@@ -1,0 +1,10 @@
+<div class="flex flex-column border-round-xl p-4 gap-3" [class]="colorBg()">
+    <div class="flex flex-row justify-content-between align-items-center">
+        <svg [pIcon]="card().icon" size="40" [color]="'var(--p-' + card().color + '-700)'"></svg>
+        <a href="#" class="no-underline" [class]="colorText()">
+            <svg data-p-icon="arrow-right"></svg>
+        </a>
+    </div>
+    <p class="font-bold" [class]="colorText()">{{card().title}}</p>
+    <small [class]="colorText()">{{card().description}}</small>
+</div>

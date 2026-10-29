@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="flex flex-column gap-3">
+
+    <p class="text-gray-500">{{currentDateCustom()}}</p>
+    
+    <h2>{{greeting()}}, Secretaria!</h2>
+
+    <div class="grid">
+        @for (card of cards; track $index) {
+            <div class="col-12 md:col-4">
+                <app-home-card [card]="card"></app-home-card>
+            </div>
+        }
+    </div>
+
+</div>
