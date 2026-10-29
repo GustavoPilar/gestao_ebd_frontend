@@ -19,6 +19,7 @@ import { EMPTY_LOGIN, Login } from '../../../core/models/auth/login';
 import { ErrorMessageForm } from '../../../components/error-message-form/error-message-form';
 import { AuthService } from '../../../core/services/auth.service';
 import { Router } from '@angular/router';
+import { HeaderTitle } from '../../../components/header-title/header-title';
 
 @Component({
   imports: [
@@ -38,7 +39,8 @@ import { Router } from '@angular/router';
     Times,
     Spinner,
     ErrorMessageForm,
-    FormField
+    FormField,
+    HeaderTitle
   ],
   selector: 'app-login',
   styleUrl: './login.scss',

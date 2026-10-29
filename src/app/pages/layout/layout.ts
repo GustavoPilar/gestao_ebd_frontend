@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { MenuBar } from '../../components/menu-bar/menu-bar';
-import { Book } from '@primeicons/angular/book';
 
 @Component({
   imports: [
-    MenuBar,
-    Book
+    MenuBar
   ],
   selector: 'app-layout',
   styleUrl: './layout.scss',
